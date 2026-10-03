@@ -298,7 +298,7 @@ function Header() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '1rem' }}>
           <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'rgba(52,211,153,0.9)' }} />
           <span style={{ fontSize: '11px', letterSpacing: '0.22em', textTransform: 'uppercase', color: textColorMuted }}>
-            Available — India
+            Available
           </span>
         </div>
       </div>

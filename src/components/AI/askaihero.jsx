@@ -340,7 +340,7 @@ export default function AskAiHero({
             </p>
             <button
               type="button"
-              className="mt-4 rounded-full bg-black px-5 py-2 text-sm text-white transition hover:bg-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+              className="mt-4 rounded-full px-4 bg-[#ef4423] px-#ef44235 py-2 text-sm text-white transition hover:bg-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
             >
               Ask AI
             </button>
