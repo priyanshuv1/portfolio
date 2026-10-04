@@ -114,7 +114,7 @@ export default function About() {
         bg-[#f7f6f2]
         text-[#111]
         z-20
-        -mt-[80vh]
+        -mt-[40vh]
       "
     >
       {/* BACKGROUND TEXT */}

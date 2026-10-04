@@ -97,7 +97,7 @@ export default function HeroAS() {
            300→400vh = cinematic exit transition (sp 0.75→1.0)
            About reads this same final 100vh window to slide up simultaneously.
       */}
-      <div ref={containerRef} style={{ height: "400vh" }} className="relative">
+      <div ref={containerRef} style={{ height: "350vh" }} className="relative">
 
         {/* ── Cinematic scale wrapper — perspective container */}
         <div
