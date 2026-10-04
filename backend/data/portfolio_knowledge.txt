@@ -1069,9 +1069,9 @@ Strong skills demonstrated
 
 Verified GitHub repositories for Priyanshu's projects. These URLs are factual links and must be preserved exactly when relevant. No live deployment URL is claimed here unless explicitly listed.
 
-- Personal Portfolio — GitHub: https://github.com/priyanshusingh89790-crypto/portfolio
-- Netflix GPT — GitHub: https://github.com/priyanshusingh89790-crypto/netflix-gpt
-- Dev Meetup — GitHub: https://github.com/priyanshusingh89790-crypto/Dev-meetup
+- Personal Portfolio — GitHub: https://github.com/priyanshuv1/portfolio
+- Netflix GPT — GitHub: https://github.com/priyanshuv1/netflix-gpt
+- Dev Meetup — GitHub: https://github.com/priyanshuv1/Dev-meetup
 - PrimeReactPagination — GitHub: https://github.com/priyanshusing89790-crypto/PrimeReactPagination
 - AI Safety SOS — GitHub: https://github.com/priyanshusing89790-crypto/ai-safety-sos
 - AI Recruiter — GitHub: https://github.com/priyanshusing89790-crypto/ai-recruiter

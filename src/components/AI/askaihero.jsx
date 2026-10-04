@@ -100,6 +100,59 @@ export default function AskAiHero({
   const [ready,   setReady]   = useState(!peek);
   const [launch,  setLaunch]  = useState(null);
 
+  const dockedRef   = useRef(false);
+  const [docked, setDocked] = useState(false);
+
+  // ── Apply/remove docking based on docked state ────────────────────────────
+  useEffect(() => {
+    const dial = dialRef.current;
+    const slot = document.getElementById("dial-nav-slot");
+    if (!dial) return;
+
+    if (docked) {
+      // Calculate position from dial center → header slot
+      const dialRect = dial.getBoundingClientRect();
+      const dialCx = dialRect.left + dialRect.width / 2;
+      const dialCy = dialRect.top + dialRect.height / 2;
+
+      let targetX = window.innerWidth - 80;
+      let targetY = 28;
+      if (slot) {
+        const slotRect = slot.getBoundingClientRect();
+        targetX = slotRect.left + slotRect.width / 2;
+        targetY = slotRect.top + slotRect.height / 2;
+      }
+
+      const dx = targetX - dialCx;
+      const dy = targetY - dialCy;
+      const scale = slot ? 40 / dialRect.width : 0.04;
+
+      dial.style.setProperty(
+        "--dock-transform",
+        `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(${scale})`
+      );
+      dial.classList.add("dh-docking");
+
+      // Fade in header slot
+      if (slot) {
+        slot.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+        slot.style.opacity = "1";
+        slot.style.pointerEvents = "auto";
+        slot.style.transform = "scale(1)";
+      }
+    } else {
+      // Undock — remove class, restore dial, hide slot
+      dial.classList.remove("dh-docking");
+      dial.style.removeProperty("--dock-transform");
+
+      if (slot) {
+        slot.style.opacity = "0";
+        slot.style.pointerEvents = "none";
+        slot.style.transform = "scale(0.8)";
+      }
+    }
+  }, [docked]);
+
   // ── Lenis + ScrollTrigger ──────────────────────────────────────────────────
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -158,12 +211,11 @@ export default function AskAiHero({
         gsap.set(needleRef.current, { rotation: idx * step - 90 });
       }
 
-      // ── Header docking: when progress > 0.92, fade in the nav slot ──
-      const slot = document.getElementById("dial-nav-slot");
-      if (slot) {
-        const dockProgress = clamp((p - 0.88) / 0.08);
-        slot.style.opacity = dockProgress.toFixed(3);
-        slot.style.pointerEvents = dockProgress > 0.5 ? "auto" : "none";
+      // ── Dock when last question reached, undock when scrolling back ──
+      const shouldDock = p >= 0.96 && idx === count - 1;
+      if (shouldDock !== dockedRef.current) {
+        dockedRef.current = shouldDock;
+        setDocked(shouldDock);
       }
     };
 
@@ -182,6 +234,13 @@ export default function AskAiHero({
       gsap.ticker.remove(onTick);
       clearTimeout(idleTimerRef.current);
       st.kill();
+      // Reset dock state on unmount
+      dockedRef.current = false;
+      const slot = document.getElementById("dial-nav-slot");
+      if (slot) {
+        slot.style.opacity = "0";
+        slot.style.pointerEvents = "none";
+      }
       if (ownsLenis) {
         lenis.destroy();
         delete window.__lenis;
@@ -332,15 +391,24 @@ export default function AskAiHero({
             onClick={() => showCard && ask(current)}
             className="dh-card absolute cursor-pointer left-1/2 top-1/2 z-30 w-[min(30vmin,250px)] -translate-x-1/2 -translate-y-1/2 text-neutral-900 max-md:bottom-[6vh] max-md:top-auto max-md:w-[min(88vw,380px)] max-md:translate-y-0 max-md:rounded-2xl max-md:bg-white max-md:p-5 max-md:shadow-2xl"
           >
-            <p className="text-xs text-neutral-400">
+            <p className="text-[10px] text-neutral-400 uppercase tracking-[0.2em]"
+              style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               {pad(active + 1)} of {pad(count)} · {current.label}
             </p>
-            <p className="mt-2 text-[clamp(15px,2.3vmin,19px)] font-medium leading-snug tracking-[-0.01em]">
+            <p className="mt-2 text-[clamp(15px,2.3vmin,19px)] font-medium leading-snug tracking-[-0.01em]"
+              style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               {current.q}
             </p>
             <button
               type="button"
-              className="mt-4 rounded-full px-4 bg-[#ef4423] px-#ef44235 py-2 text-sm text-white transition hover:bg-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: '11px',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                fontWeight: 600,
+              }}
+              className="mt-4 rounded-full bg-[#ef4423] px-5 py-2 text-white transition hover:bg-[#d63a1e] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ef4423]"
             >
               Ask AI
             </button>
@@ -355,7 +423,7 @@ export default function AskAiHero({
 }
 
 const css = `
-.dh{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+.dh{font-family:'Space Grotesk',sans-serif}
 .dh-stage{--rise:0}
 
 .dh-dial{
@@ -364,11 +432,17 @@ const css = `
   border-radius:50%;background:#fff;color:#111;
   box-shadow:0 30px 80px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.06);
   transform:translate(-50%,calc(-50% + (1 - var(--rise)) * 50vh)) scale(calc(.88 + .12 * var(--rise)));
-  will-change:transform}
+  will-change:transform;
+  transition:transform 0.7s cubic-bezier(0.22,1,0.36,1),opacity 0.5s ease,border-radius 0.5s ease}
+.dh-dial.dh-docking{
+  transform:var(--dock-transform) !important;
+  opacity:0 !important;
+  border-radius:100px !important}
 .dh-ring{position:absolute;inset:14px;border-radius:50%;border:1px solid #ececec;pointer-events:none}
 
 .dh-num{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   font-size:clamp(4rem,15vmin,9.5rem);font-weight:300;letter-spacing:-.06em;color:#ececec;
+  font-family:'Syne',sans-serif;
   font-variant-numeric:tabular-nums;transition:opacity .25s;pointer-events:none}
 .dh-num[data-card="1"]{opacity:0}
 
@@ -376,14 +450,18 @@ const css = `
   position:absolute;left:50%;top:50%;transform-origin:0 50%;
   transform:translateY(-50%) rotate(var(--a)) translateX(calc(var(--r) - 100%));
   white-space:nowrap;padding:8px 4px;border:0;background:none;cursor:pointer;
-  font:inherit;font-size:clamp(10px,1.6vmin,13px);color:#b9b9b9;transition:color .2s}
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(10px,1.6vmin,13px);
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:#b9b9b9;transition:color .2s}
 .dh-label:hover,.dh-label:focus-visible{color:#555;outline:none}
-.dh-label.is-on{color:#000}
+.dh-label.is-on{color:#ef4423}
 
 .dh-needle{position:absolute;left:50%;top:50%;width:0;height:0;will-change:transform}
-.dh-needle i{position:absolute;top:0;left:calc(var(--r) * .44);height:1px;background:#000;
+.dh-needle i{position:absolute;top:0;left:calc(var(--r) * .44);height:1px;background:#ef4423;
   width:max(18px,calc(var(--r) * .56 - 118px))}
-.dh-tick{position:absolute;top:-6px;left:calc(var(--r) * .44 - 16px);font-size:10px;color:#000}
+.dh-tick{position:absolute;top:-6px;left:calc(var(--r) * .44 - 16px);
+  font-size:10px;color:#ef4423;font-family:'Space Grotesk',sans-serif;letter-spacing:0.1em}
 
 .dh-card{opacity:0;pointer-events:none;transition:opacity .3s ease,transform .3s ease}
 .dh-card[data-show="1"]{opacity:1;pointer-events:auto;animation:dh-in .35s ease both}

@@ -14,7 +14,7 @@ const projectData = [
     mobileImage: "project/netflixmob.png",
     year: "2024",
     category: "AI Product",
-    links: { live: NETFLIX_LINK, github: "#" },
+    links: { live: NETFLIX_LINK, github: "https://github.com/priyanshuv1/netflix-gpt" },
     link: NETFLIX_LINK,
   },
   {
@@ -30,7 +30,7 @@ const projectData = [
     mobileImage: "project/devmob.png",
     year: "2023",
     category: "Full-Stack",
-    links: { live: DEVMEETUP_LINK, github: "#" },
+    links: { live: DEVMEETUP_LINK, github: "https://github.com/priyanshuv1/Dev-meetup" },
     link: DEVMEETUP_LINK,
   },
   {
@@ -46,7 +46,7 @@ const projectData = [
     mobileImage: "project/cafemob.png",
     year: "2022",
     category: "Brand Site",
-    links: { live: CAFE_LINK, github: "#" },
+    links: { live: CAFE_LINK, github: "https://github.com/priyanshuv1/brand-project" },
     link: CAFE_LINK,
   },
   {
@@ -69,7 +69,7 @@ const projectData = [
     mobileImage: "project/portfoliomob.png",
     year: "2025",
     category: "Portfolio",
-    links: { live: "/", github: "#" },
+    links: { live: "/", github: "https://github.com/priyanshuv1/portfolio" },
     link: "/",
   },
 ];

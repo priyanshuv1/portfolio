@@ -183,22 +183,28 @@ function Header() {
               </button>
             );
           })}
-          {/* Ask AI nav slot - hidden until docked */}
+          {/* Ask AI nav slot - hidden until dial docks into it */}
           <a
             id="dial-nav-slot"
             href="/ask"
-            className="rounded-full px-2 py-1 text-sm text-white transition hover:opacity-90 border border-white/20"
             style={{
-              fontFamily: 'var(--font-body, sans-serif)',
-              fontSize: 'clamp(9px, 1vw, 11px)',
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: '11px',
               letterSpacing: '0.22em',
               textTransform: 'uppercase',
-              background: 'linear-gradient(135deg, #ff6b35 100%, #7fd1ae 100%)',
+              fontWeight: 600,
+              background: '#ef4423',
+              color: '#ffffff',
+              border: 'none',
+              borderRadius: '100px',
+              padding: '0.4rem 1rem',
               cursor: 'pointer',
-              transition: 'opacity 0.4s',
+              transition: 'opacity 0.4s ease, transform 0.4s ease',
               opacity: 0,
               pointerEvents: 'none',
               textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
             }}
           >
             Ask AI

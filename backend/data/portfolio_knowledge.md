@@ -2,7 +2,7 @@
 
 > **Purpose:** This is the evidence-backed knowledge source for the AI assistant embedded in Priyanshu Singh's portfolio.
 >
-> **Source:** Public GitHub repositories under `priyanshusingh89790-crypto`.
+> **Source:** Public GitHub repositories under `priyanshuv1`.
 >
 > **Important:** This document distinguishes verified implementation evidence from repository names/metadata and from features that are only planned. The AI must never invent a technology, feature, metric, deployment, job responsibility, or implementation detail that is not supported here.
 
@@ -1341,103 +1341,103 @@ When answering about Priyanshu:
 ## Main Projects
 
 - Netflix GPT:
-  https://github.com/priyanshusingh89790-crypto/netflix-gpt
+  https://github.com/priyanshuv1/netflix-gpt
 
 - Brand Project:
-  https://github.com/priyanshusingh89790-crypto/brand-project
+  https://github.com/priyanshuv1/brand-project
 
 - Dev Meetup:
-  https://github.com/priyanshusingh89790-crypto/Dev-meetup
+  https://github.com/priyanshuv1/Dev-meetup
 
 - Portfolio:
-  https://github.com/priyanshusingh89790-crypto/portfolio
+  https://github.com/priyanshuv1/portfolio
 
 - PrimeReactPagination:
-  https://github.com/priyanshusingh89790-crypto/PrimeReactPagination
+  https://github.com/priyanshuv1/PrimeReactPagination
 
 - AI Safety SOS:
-  https://github.com/priyanshusingh89790-crypto/ai-safety-sos
+  https://github.com/priyanshuv1/ai-safety-sos
 
 - Mail Inbox Task:
-  https://github.com/priyanshusingh89790-crypto/Mail-Inbox-Task
+  https://github.com/priyanshuv1/Mail-Inbox-Task
 
 - Inventory Management System:
-  https://github.com/priyanshusingh89790-crypto/inventory-management-system
+  https://github.com/priyanshuv1/inventory-management-system
 
 - Sales CRM:
-  https://github.com/priyanshusingh89790-crypto/sales_CRM
+  https://github.com/priyanshuv1/sales_CRM
 
 - 3W Social Post App:
-  https://github.com/priyanshusingh89790-crypto/3w-social-post-app
+  https://github.com/priyanshuv1/3w-social-post-app
 
 - AI Trading Research:
-  https://github.com/priyanshusingh89790-crypto/AI-TRADING-RESEARCH
+  https://github.com/priyanshuv1/AI-TRADING-RESEARCH
 
 - AI Workspace:
-  https://github.com/priyanshusingh89790-crypto/Ai-workspace
+  https://github.com/priyanshuv1/Ai-workspace
 
 - AI Integration:
-  https://github.com/priyanshusingh89790-crypto/Ai-integration
+  https://github.com/priyanshuv1/Ai-integration
 
 - ARCHSCALE Voice Assistant:
-  https://github.com/priyanshusingh89790-crypto/ARCHSCALE-VOICE_ASSISTANT
+  https://github.com/priyanshuv1/ARCHSCALE-VOICE_ASSISTANT
 
 
 ## Assignments / Other Projects
 
 - Task Management:
-  https://github.com/priyanshusingh89790-crypto/taskmanagement
+  https://github.com/priyanshuv1/taskmanagement
 
 - APS Assignment:
-  https://github.com/priyanshusingh89790-crypto/aps-assignment
+  https://github.com/priyanshuv1/aps-assignment
 
 - Educase Assignment:
-  https://github.com/priyanshusingh89790-crypto/Educase-assignment
+  https://github.com/priyanshuv1/Educase-assignment
 
 - Codes for Tomorrow Task:
-  https://github.com/priyanshusingh89790-crypto/codesfortomorrow--task
+  https://github.com/priyanshuv1/codesfortomorrow--task
 
 - AI Recruiter:
-  https://github.com/priyanshusingh89790-crypto/ai-recruiter
+  https://github.com/priyanshuv1/ai-recruiter
 
 - Itzzfizz Animation:
-  https://github.com/priyanshusingh89790-crypto/Itzzfizz-animation
+  https://github.com/priyanshuv1/Itzzfizz-animation
 
 - Figma Design:
-  https://github.com/priyanshusingh89790-crypto/Figma-design
+  https://github.com/priyanshuv1/Figma-design
 
 - Zoryvn Finance Dashboard:
-  https://github.com/priyanshusingh89790-crypto/zoryvn-assignment-FinanceDashboard
+  https://github.com/priyanshuv1/zoryvn-assignment-FinanceDashboard
 
 - ADORE Assignment:
-  https://github.com/priyanshusingh89790-crypto/ADORE-assignment
+  https://github.com/priyanshuv1/ADORE-assignment
 
 - Eva Bharat Assignment:
-  https://github.com/priyanshusingh89790-crypto/Eva-bharat-assignment-
+  https://github.com/priyanshuv1/Eva-bharat-assignment-
 
 - SuperCode Assignment:
-  https://github.com/priyanshusingh89790-crypto/SuperCode-assignment
+  https://github.com/priyanshuv1/SuperCode-assignment
 
 - Koinx Assignment:
-  https://github.com/priyanshusingh89790-crypto/koinx-assignment
+  https://github.com/priyanshuv1/koinx-assignment
 
 - React Native CogniqAI Task:
-  https://github.com/priyanshusingh89790-crypto/reactnative-task-cogniqAi
+  https://github.com/priyanshuv1/reactnative-task-cogniqAi
 
 - Multi Category Product Assignment:
-  https://github.com/priyanshusingh89790-crypto/multi-category-product-assignment
+  https://github.com/priyanshuv1/multi-category-product-assignment
 
 - Cinegrapgh:
-  https://github.com/priyanshusingh89790-crypto/cinegrapgh
+  https://github.com/priyanshuv1/cinegrapgh
 
 
 ## Other Repositories
 
 - React:
-  https://github.com/priyanshusingh89790-crypto/react-
+  https://github.com/priyanshuv1/react-
 
 - Just:
-  https://github.com/priyanshusingh89790-crypto/just
+  https://github.com/priyanshuv1/just
 
 - Ansible Project:
-  https://github.com/priyanshusingh89790-crypto/ansibleproject
+  https://github.com/priyanshuv1/ansibleproject
